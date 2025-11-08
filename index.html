@@ -5,33 +5,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SYndr — Take a break then...</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: #fff;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      color: #111;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
+      justify-content: center;
+      min-height: 100vh;
     }
+
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 80px 20px 40px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
     h1 {
       font-size: 4rem;
-      letter-spacing: 4px;
+      letter-spacing: 6px;
       text-transform: uppercase;
+      font-weight: 600;
     }
-    p {
-      font-size: 1.2rem;
+
+    p.tagline {
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 12px;
+      letter-spacing: 2px;
+    }
+
+    section {
+      width: 100%;
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .about, .lookbook, .contact {
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .about p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #444;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .lookbook-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .lookbook-images img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .lookbook-images img:hover {
+      filter: grayscale(100%);
+      transform: scale(1.02);
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    footer a {
       color: #aaa;
-      margin-top: 10px;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>SYndr</h1>
-  <p>Take a break then...</p>
+  <header>
+    <h1>SYndr</h1>
+    <p class="tagline">Take a break then...</p>
+  </header>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>
+      SYndr는 현대 스트릿 감성과 하이엔드 무드를 결합한 의류 브랜드입니다.<br>
+      심플함 속의 디테일, 여백 속의 긴장감을 통해 독창적인 감각을 표현합니다.
+    </p>
+  </section>
+
+  <section class="lookbook">
+    <h2>Lookbook</h2>
+    <div class="lookbook-images">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="Look 1">
+      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716c?auto=format&fit=crop&w=800&q=80" alt="Look 2">
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=800&q=80" alt="Look 3">
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Instagram — <a href="https://instagram.com" target="_blank">@syndr.official</a></p>
+    <p>Email — contact@syndr.com</p>
+  </section>
+
+  <footer>
+    © 2025 SYndr. All Rights Reserved.  
+    <a href="#">Privacy</a> | <a href="#">Terms</a>
+  </footer>
 </body>
 </html>
+
