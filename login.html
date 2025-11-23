@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+</head>
+<body>
+
+  <h2>로그인</h2>
+
+  <input type="email" id="email" placeholder="이메일"><br><br>
+  <input type="password" id="password" placeholder="비밀번호"><br><br>
+  <button id="loginBtn">로그인</button>
+
+  <p>아직 회원이 아니신가요? <a href="signup.html">회원가입</a></p>
+
+  <!-- Firebase 초기화 -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDeXzcS1j2n4Mbj9uJLtzuWwQV_pDln-Ps",
+      authDomain: "officialsyndr-d6531.firebaseapp.com",
+      projectId: "officialsyndr-d6531",
+      storageBucket: "officialsyndr-d6531.firebasestorage.app",
+      messagingSenderId: "249358124254",
+      appId: "1:249358124254:web:96b54aed6a5c9cf675ae4f",
+      measurementId: "G-DEWR6ET61H"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          alert("로그인 성공!");
+          window.location.href = "index.html";  // 로그인 후 이동할 페이지
+        })
+        .catch(error => {
+          alert("로그인 실패: " + error.message);
+        });
+    });
+  </script>
+
+</body>
+</html>
 
