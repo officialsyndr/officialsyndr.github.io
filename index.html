@@ -226,22 +226,45 @@
     <a href="#">Privacy</a> | <a href="#">Terms</a>
   </footer>
 
-  <script>
-    // Scroll Fade-In Effect
-    const sections = document.querySelectorAll("section");
+<script>
+  // Scroll Fade-In Effect
+  const sections = document.querySelectorAll("section");
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => {
-      observer.observe(section);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
     });
-  </script>
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+<script type="module">
+  // Firebase SDK import
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyDeXzcS1j2n4Mbj9uJLtzuWwQV_pDln-Ps",
+    authDomain: "officialsyndr-d6531.firebaseapp.com",
+    projectId: "officialsyndr-d6531",
+    storageBucket: "officialsyndr-d6531.firebasestorage.app",
+    messagingSenderId: "249358124254",
+    appId: "1:249358124254:web:96b54aed6a5c9cf675ae4f",
+    measurementId: "G-DEWR6ET61H"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+</script>
+
+  
 </body>
 </html>
 
